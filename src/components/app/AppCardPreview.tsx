@@ -1,12 +1,12 @@
 import { RefObject, useRef } from "react";
-import downloadImageService from "../../utils/downloadImage";
+import useDownloadImage from "../../hooks/useDownloadImage";
 
 import AppQrCodeCanvas from "./AppQrCodeCanvas";
 import BaseCard from "../base/BaseCard";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 interface IProps {
   userName: string;
@@ -22,10 +22,7 @@ export default function AppCardPreview({
   const greetings = `Hello, my name is ${userName}!`;
 
   const userCard: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
-
-  async function handleDownload(): Promise<void> {
-    await downloadImageService(userCard);
-  }
+  const { downloadLink, handleDownloadImage } = useDownloadImage(userCard);
 
   return (
     <div className="flex flex-col gap-2">
@@ -62,13 +59,14 @@ export default function AppCardPreview({
         </BaseCard>
       </div>
       <button
-        onClick={handleDownload}
+        onClick={handleDownloadImage}
         className="text-gray-700 bg-gray-300 font-bold py-2 w-1/2 mx-auto rounded-xl"
       >
         <span className="flex gap-2 items-center justify-center">
           <FontAwesomeIcon icon={faFloppyDisk} />
           Download image
         </span>
+        {downloadLink && <a href={downloadLink} download="card.png" />}
       </button>
     </div>
   );

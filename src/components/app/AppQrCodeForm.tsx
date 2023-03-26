@@ -13,7 +13,7 @@ export default function AppQrCodeForm({ onSubmit }: IProps): JSX.Element {
   const [userLinkedin, setUserLinkedin] = useState("");
   const [userGithub, setUserGithub] = useState("");
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
+  function handleSubmit(event: FormEvent<HTMLFormElement>): void {
     event.preventDefault();
     onSubmit(userName, userLinkedin, userGithub);
   };
