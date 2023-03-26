@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useDocumentTitle from "./hooks/useDocumentTitle";
 
 import AppCardPreview from "./components/app/AppCardPreview";
 import AppQrCodeForm from "./components/app/AppQrCodeForm";
@@ -7,6 +8,8 @@ import BaseCard from "./components/base/BaseCard";
 interface IProps {}
 
 export default function App({}: IProps): JSX.Element {
+  useDocumentTitle("Virtual Card | Generate your own business card online");
+
   const [userName, setUserName] = useState("");
   const [userLinkedin, setUserLinkedin] = useState("");
   const [userGithub, setUserGithub] = useState("");
