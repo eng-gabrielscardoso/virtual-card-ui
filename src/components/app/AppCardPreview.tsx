@@ -1,4 +1,5 @@
 import { RefObject, useRef } from "react";
+import snakeCase from "lodash/snakeCase"
 import useDownloadImage from "../../hooks/useDownloadImage";
 
 import AppQrCodeCanvas from "./AppQrCodeCanvas";
@@ -19,7 +20,8 @@ export default function AppCardPreview({
   userLinkedin,
   userGithub,
 }: IProps): JSX.Element {
-  const greetings = `Hello, my name is ${userName}!`;
+  const greetings: string = `Hello, my name is ${userName}!`;
+  const userBusinessCardLink: string = `${document.location.href}${snakeCase(userName)}`
 
   const userCard: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
   const { downloadLink, handleDownloadImage } = useDownloadImage(userCard);
@@ -54,7 +56,7 @@ export default function AppCardPreview({
                 </a>
               </span>
             </div>
-            <AppQrCodeCanvas text="Teste" />
+            <AppQrCodeCanvas target={userBusinessCardLink} />
           </div>
         </BaseCard>
       </div>

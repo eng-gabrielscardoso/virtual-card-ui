@@ -2,19 +2,19 @@ import { useEffect, useRef } from "react";
 import QRCode from "qrcode";
 
 interface IProps {
-  text: string;
+  target: string;
 }
 
-export default function AppQrCodeCanvas({ text }: IProps): JSX.Element {
+export default function AppQrCodeCanvas({ target }: IProps): JSX.Element {
   const canvasRef = useRef(null);
 
   useEffect(() => {
     if (canvasRef.current) {
-      QRCode.toCanvas(canvasRef.current, text, (error) => {
+      QRCode.toCanvas(canvasRef.current, target, (error) => {
         if (error) console.error(error);
       });
     }
-  }, [text]);
+  }, [target]);
 
   return <canvas ref={canvasRef} />;
 }
