@@ -8,7 +8,7 @@ interface IProps {
   ) => void;
 }
 
-export default function AppQrCodeForm({ onSubmit }: IProps): JSX.Element {
+export default function HomeQrCodeForm({ onSubmit }: IProps): JSX.Element {
   const [userName, setUserName] = useState("");
   const [userLinkedin, setUserLinkedin] = useState("");
   const [userGithub, setUserGithub] = useState("");

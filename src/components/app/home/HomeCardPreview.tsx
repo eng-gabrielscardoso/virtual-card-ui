@@ -1,9 +1,9 @@
 import { RefObject, useRef } from "react";
 import snakeCase from "lodash/snakeCase"
-import useDownloadImage from "../../hooks/useDownloadImage";
+import useDownloadImage from "../../../hooks/useDownloadImage";
 
-import AppQrCodeCanvas from "./AppQrCodeCanvas";
-import BaseCard from "../base/BaseCard";
+import HomeQrCodeCanvas from "./HomeQrCodeCanvas";
+import BaseCard from "../../base/BaseCard";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
@@ -15,7 +15,7 @@ interface IProps {
   userGithub: string;
 }
 
-export default function AppCardPreview({
+export default function HomeCardPreview({
   userName,
   userLinkedin,
   userGithub,
@@ -56,7 +56,7 @@ export default function AppCardPreview({
                 </a>
               </span>
             </div>
-            <AppQrCodeCanvas target={userBusinessCardLink} />
+            <HomeQrCodeCanvas target={userBusinessCardLink} />
           </div>
         </BaseCard>
       </div>

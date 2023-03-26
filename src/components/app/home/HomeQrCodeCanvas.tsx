@@ -5,7 +5,7 @@ interface IProps {
   target: string;
 }
 
-export default function AppQrCodeCanvas({ target }: IProps): JSX.Element {
+export default function HomeQrCodeCanvas({ target }: IProps): JSX.Element {
   const canvasRef = useRef(null);
 
   useEffect(() => {
