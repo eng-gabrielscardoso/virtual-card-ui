@@ -5,7 +5,7 @@ interface IProps {
   text: string;
 }
 
-export default function QRCodeGenerator({ text }: IProps) {
+export default function AppQrCodeCanvas({ text }: IProps): JSX.Element {
   const canvasRef = useRef(null);
 
   useEffect(() => {
