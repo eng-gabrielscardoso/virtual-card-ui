@@ -1,8 +1,12 @@
 import { RefObject, useRef } from "react";
 import downloadImageService from "../../utils/downloadImage";
 
-import BaseCard from "../base/BaseCard";
 import AppQrCodeCanvas from "./AppQrCodeCanvas";
+import BaseCard from "../base/BaseCard";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 
 interface IProps {
   userName: string;
@@ -30,11 +34,27 @@ export default function AppCardPreview({
           <div className="flex flex-col sm:flex-row gap-2 items-center justify-between">
             <div className="flex flex-col gap-1">
               <span>You can connect with me via LinkedIn or Github.</span>
-              <span>
-                <b>Linkedin:</b> {userLinkedin}
+              <span className="flex gap-2 items-center">
+                <FontAwesomeIcon icon={faLinkedin} />
+                <a
+                  href={userLinkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:cursor-pointer hover:underline"
+                >
+                  {userLinkedin}
+                </a>
               </span>
-              <span>
-                <b>Github:</b> {userGithub}
+              <span className="flex gap-2 items-center">
+                <FontAwesomeIcon icon={faGithub} />
+                <a
+                  href={userGithub}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:cursor-pointer hover:underline"
+                >
+                  {userGithub}
+                </a>
               </span>
             </div>
             <AppQrCodeCanvas text="Teste" />
@@ -45,7 +65,10 @@ export default function AppCardPreview({
         onClick={handleDownload}
         className="text-gray-700 bg-gray-300 font-bold py-2 w-1/2 mx-auto rounded-xl"
       >
-        Download image
+        <span className="flex gap-2 items-center justify-center">
+          <FontAwesomeIcon icon={faFloppyDisk} />
+          Download image
+        </span>
       </button>
     </div>
   );
