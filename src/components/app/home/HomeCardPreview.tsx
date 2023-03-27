@@ -1,5 +1,4 @@
 import { RefObject, useRef } from "react";
-import snakeCase from "lodash/snakeCase"
 import useDownloadImage from "../../../hooks/useDownloadImage";
 
 import HomeQrCodeCanvas from "./HomeQrCodeCanvas";
@@ -21,10 +20,10 @@ export default function HomeCardPreview({
   userGithub,
 }: IProps): JSX.Element {
   const greetings: string = `Hello, my name is ${userName}!`;
-  const userBusinessCardLink: string = `${document.location.href}${snakeCase(userName)}`
+  const userBusinessCardLink: string = `${document.location.href}${userName}`
 
   const userCard: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
-  const { downloadLink, handleDownloadImage } = useDownloadImage(userCard);
+  const [downloadLink, handleDownloadImage] = useDownloadImage(userCard);
 
   return (
     <div className="flex flex-col gap-2">

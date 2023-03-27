@@ -11,7 +11,7 @@ export default function HomeQrCodeCanvas({ target }: IProps): JSX.Element {
   useEffect(() => {
     if (canvasRef.current) {
       QRCode.toCanvas(canvasRef.current, target, (error) => {
-        if (error) console.error(error);
+        if (error) throw error;
       });
     }
   }, [target]);

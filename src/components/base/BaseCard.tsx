@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 interface IProps {
   title: string;
   theme?: "white" | "dark" | "accent" | "primary" | "secondary";
-  children: ReactNode
+  children: ReactNode | JSX.Element | JSX.Element[]
 }
 
 const themes = {

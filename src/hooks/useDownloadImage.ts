@@ -1,14 +1,14 @@
 import html2canvas from "html2canvas";
 import { RefObject, useCallback, useState } from "react";
 
-type UseDownloadImageServiceResponse = {
-  downloadLink: string;
-  handleDownloadImage: () => Promise<void>;
-};
+type UseDownloadImage = [
+  downloadLink: string,
+  handleDownloadImage: () => Promise<void>,
+];
 
 export default function useDownloadImage(
   ref: RefObject<HTMLDivElement>
-): UseDownloadImageServiceResponse {
+): UseDownloadImage {
   const [downloadLink, setDownloadLink] = useState<string>("");
 
   const handleDownloadImage = useCallback(async () => {
@@ -26,5 +26,5 @@ export default function useDownloadImage(
     }
   }, [ref]);
 
-  return { downloadLink, handleDownloadImage } as UseDownloadImageServiceResponse;
+  return [ downloadLink, handleDownloadImage ];
 }
