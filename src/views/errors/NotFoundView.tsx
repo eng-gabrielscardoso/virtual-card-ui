@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 interface IProps {}
 
 export default function NotFoundView({}: IProps): JSX.Element {
-  useDocumentTitle("Not Found | Virtual Card");
+  useDocumentTitle("Not Found");
 
   return (
     <BaseCard title="Not found the requested resource">

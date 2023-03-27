@@ -1,13 +1,16 @@
 import { useRef, useEffect } from "react";
+import configuration from "../config/configuration";
 
 export default function useDocumentTitle(
-  title: string,
+  title?: string,
   prevailOnUnmount: boolean = false
 ): void {
   const defaultTitle = useRef<string>(document.title);
 
   useEffect(() => {
-    document.title = title;
+    title
+      ? (document.title = `${title} | ${configuration().app.name}`)
+      : (document.title = `${configuration().app.name}`);
   }, [title]);
 
   useEffect(() => {

@@ -8,7 +8,7 @@ import BaseCard from "../../components/base/BaseCard";
 interface IProps {}
 
 export default function HomeView({}: IProps): JSX.Element {
-  useDocumentTitle("Virtual Card | Generate your own business card online");
+  useDocumentTitle();
 
   const [userName, setUserName] = useState("");
   const [userLinkedin, setUserLinkedin] = useState("");
