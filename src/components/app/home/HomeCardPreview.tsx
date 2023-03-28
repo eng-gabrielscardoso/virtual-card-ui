@@ -24,7 +24,7 @@ export default function HomeCardPreview({
   userGithub,
 }: IProps): JSX.Element {
   const greetings: string = `Hello, my name is ${userName}!`;
-  const userBusinessCardLink: string = `${document.location.href}${urlfy(userName)}`
+  const userBusinessCardLink: string = `${document.location.href}profile/${urlfy(userName)}`
   // temp for show in web the result of qrcode
   console.log(userBusinessCardLink)
 
