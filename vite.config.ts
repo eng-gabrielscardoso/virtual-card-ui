@@ -8,5 +8,6 @@ export default defineConfig({
     // temp
     host: true,
     cors: true,
-  }
+    port: 3000,
+  },
 });
