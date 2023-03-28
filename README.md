@@ -16,12 +16,69 @@
 - [Virtual Card UI](#virtual-card-ui)
   - [Table of content](#table-of-content)
   - [Installation](#installation)
+    - [Local](#local)
+    - [Docker](#docker)
   - [Licence](#licence)
   - [Author](#author)
 
 ## Installation
 
-> Under development
+### Local
+
+If you want to run locally you must install the necessary SDK: NodeJS (or NVM) version 16^, Visual Studio Code (or your preferred IDE) and a browser like Chrome or Firefox. You also have to install a QR Code reader in you device to test all the features.
+
+1. Clone the repository in your machine with the following command:
+```bash
+git clone https://github.com/eng-gabrielscardoso/virtual-card-ui.git
+```
+2. Copy the `.env.example` file as `.env` and fill with the correct values. Setup the application with the following command:
+> With NPM
+```bash
+npm i
+```
+> With yarn
+```bash
+yarn
+```
+3. Run the application with the following command:
+> With NPM
+```bash
+npm run dev
+```
+> With yarn
+```bash
+yarn dev
+```
+4. If you want to test the application in production mode, run the following command:
+> With NPM
+```bash
+npm run build && npm run preview
+```
+> With yarn
+```bash
+yarn build && yarn preview
+```
+
+### Docker
+
+If you don't want to install any SDK you could run with the Docker and Docker Compose.
+
+1. Clone the repository in your machine with the following command:
+```bash
+git clone https://github.com/eng-gabrielscardoso/virtual-card-ui.git
+```
+2. Setup the container with the following command:
+```bash
+docker-compose up -d
+```
+3. Run the container in development mode with the following command:
+```bash
+docker-compose exec app npm run dev
+```
+4. Run the container in production mode with the following command:
+```bash
+docker-compose exec app npm run build && docker-compose exec app npm run preview
+```
 
 ## Licence
 
