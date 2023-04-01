@@ -3,7 +3,7 @@ import { RefObject, useCallback, useState } from "react";
 
 type UseDownloadImage = [
   downloadLink: string,
-  handleDownloadImage: () => Promise<void>,
+  handleDownloadImage: () => Promise<void>
 ];
 
 export default function useDownloadImage(
@@ -26,5 +26,5 @@ export default function useDownloadImage(
     }
   }, [ref]);
 
-  return [ downloadLink, handleDownloadImage ];
+  return [downloadLink, handleDownloadImage];
 }

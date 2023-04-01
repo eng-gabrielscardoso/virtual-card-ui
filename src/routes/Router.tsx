@@ -8,7 +8,7 @@ export default function Router(): JSX.Element {
   return (
     <Routes>
       <Route path="/" Component={HomeView} />
-      <Route path="/profile/:name" element={<ProfileView />} />
+      <Route path="/profiles/:name" element={<ProfileView />} />
       <Route path="*" Component={NotFoundView} />
     </Routes>
   );

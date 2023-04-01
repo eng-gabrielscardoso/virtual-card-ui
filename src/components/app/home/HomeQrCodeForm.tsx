@@ -16,7 +16,7 @@ export default function HomeQrCodeForm({ onSubmit }: IProps): JSX.Element {
   function handleSubmit(event: FormEvent<HTMLFormElement>): void {
     event.preventDefault();
     onSubmit(userName, userLinkedin, userGithub);
-  };
+  }
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">

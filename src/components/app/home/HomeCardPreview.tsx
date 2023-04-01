@@ -15,7 +15,7 @@ interface IProps {
 }
 
 function urlfy(url: string): string {
-  return url.replace(/\s/g, '%20');
+  return url.replace(/\s/g, "%20");
 }
 
 export default function HomeCardPreview({
@@ -24,9 +24,11 @@ export default function HomeCardPreview({
   userGithub,
 }: IProps): JSX.Element {
   const greetings: string = `Hello, my name is ${userName}!`;
-  const userBusinessCardLink: string = `${document.location.href}profile/${urlfy(userName)}`
+  const userBusinessCardLink: string = `${
+    document.location.href
+  }profiles/${urlfy(userName)}`;
   // temp for show in web the result of qrcode
-  console.log(userBusinessCardLink)
+  console.log(userBusinessCardLink);
 
   const userCard: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
   const [downloadLink, handleDownloadImage] = useDownloadImage(userCard);

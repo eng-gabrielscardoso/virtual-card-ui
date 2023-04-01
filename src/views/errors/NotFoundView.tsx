@@ -13,8 +13,12 @@ export default function NotFoundView({}: IProps): JSX.Element {
       <p>It's seems that the requested page does not exist.</p>
       <p>For further information please contact support.</p>
       <p>
-        Go back home <Link to="/" className="text-blue-600 underline hover:text-blue-700">here</Link>.
+        Go back home{" "}
+        <Link to="/" className="text-blue-600 underline hover:text-blue-700">
+          here
+        </Link>
+        .
       </p>
     </BaseCard>
-  )
+  );
 }

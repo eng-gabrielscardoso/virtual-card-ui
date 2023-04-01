@@ -37,10 +37,28 @@ export default function ProfileView({}: IProps): JSX.Element {
             <b>Name:</b> {profileData.data?.name}
           </p>
           <p className="text-lg flex gap-2 items-center">
-            <FontAwesomeIcon icon={faLinkedin} /><b>Linkedin Profile:</b> <a href={profileData.data?.linkedin} target="_blank" rel="noopener noreferrer" className="underline">{profileData.data?.linkedin}</a>
+            <FontAwesomeIcon icon={faLinkedin} />
+            <b>Linkedin Profile:</b>{" "}
+            <a
+              href={profileData.data?.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              {profileData.data?.linkedin}
+            </a>
           </p>
           <p className="text-lg flex gap-2 items-center">
-            <FontAwesomeIcon icon={faGithub} /><b>Github Profile:</b> <a href={profileData.data?.github} target="_blank" rel="noopener noreferrer" className="underline">{profileData.data?.github}</a>
+            <FontAwesomeIcon icon={faGithub} />
+            <b>Github Profile:</b>{" "}
+            <a
+              href={profileData.data?.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              {profileData.data?.github}
+            </a>
           </p>
         </div>
       ) : (
